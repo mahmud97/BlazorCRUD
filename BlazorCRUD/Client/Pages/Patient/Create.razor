@@ -1,0 +1,22 @@
+﻿@page "/patient/create"
+@inject HttpClient http
+@inject NavigationManager navigate
+<h3>Create</h3>
+
+<PatientForm ButtonText="Create Patient" Patient="@patient"
+            OnValidSubmit="@CreatePatient" />
+
+
+@code {
+
+    Patient patient = new Patient();
+
+    async Task CreatePatient()
+    {
+        await http.PostJsonAsync("api/patient", patient);
+        navigate.NavigateTo("patient");    
+
+    }
+
+
+}

@@ -1,0 +1,33 @@
+﻿<EditForm Model="@patient" OnValidSubmit="@OnValidSubmit">
+    <DataAnnotationsValidator />
+    <div>
+        <label>Serial No</label>
+        <div>
+            <InputNumber @bind-Value="@patient.SerialNo" />
+            <ValidationMessage For="@(() => patient.SerialNo)" />
+        </div>
+    </div>
+
+    <div>
+        <label>Patient Name</label>
+        <div>
+            <InputText @bind-Value="@patient.Name" />
+            <ValidationMessage For="@(() => patient.Name)" />
+        </div>
+    </div>
+    <br />
+
+    <button type="submit" class="btn btn-success">
+        @ButtonText
+    </button>
+
+</EditForm>
+
+
+
+@code {
+    [Parameter] public Patient patient{ get; set; }
+    [Parameter] public string ButtonText { get; set; } = "Save Patient";
+    [Parameter] public EventCallback OnValidSubmit { get; set; }
+
+}

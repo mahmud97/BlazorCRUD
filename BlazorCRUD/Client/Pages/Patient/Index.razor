@@ -1,0 +1,80 @@
+﻿@page "/patient"
+@page "/"
+@inject HttpClient http
+@inject IJSRuntime js
+
+<h2>Patient</h2>
+
+<div>
+    <a class="btn btn-success" href="/patient/create">Create New Patient</a>
+</div>
+
+
+@if (patient == null)
+{
+    <p>Loading</p>
+}
+
+else if (patient.Length == 0)
+{
+    <p>there are no data</p>
+}
+
+
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Id</th>
+                <th>SerialNo</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in patient)
+            {
+                <tr>
+                    <td>
+
+                        <a class="btn btn-success" href="patient/edit/@p.Id">Edit</a>
+                        <button class="btn btn-danger" @onclick="@(() => DeletePatient(@p.Id))">Delete</button>
+
+                    </td>
+                    <td>@p.Id</td>
+                    <td>@p.SerialNo</td>
+                    <td>@p.Name</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+@code{
+
+    Patient[] patient { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GetPatientData();
+    }
+
+    async Task GetPatientData()
+    {
+        patient = await http.GetJsonAsync<Patient[]>("api/patient");
+
+
+    }
+
+    async Task DeletePatient(int patientId)
+    {
+        var selectedpatient = patient.First(p => p.Id == patientId);
+        if (await js.InvokeAsync<bool>("confirm", $"Are you sure to delete patient information of  : {selectedpatient.Name}?"))
+        {
+            await http.DeleteAsync($"api/patient/{patientId}");
+            await GetPatientData();
+
+        }
+    }
+
+}

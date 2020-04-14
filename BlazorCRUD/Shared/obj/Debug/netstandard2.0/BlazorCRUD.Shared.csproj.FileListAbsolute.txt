@@ -1,0 +1,9 @@
+E:\PROJECTS\BlazorCRUD\BlazorCRUD\Shared\bin\Debug\netstandard2.0\BlazorCRUD.Shared.deps.json
+E:\PROJECTS\BlazorCRUD\BlazorCRUD\Shared\bin\Debug\netstandard2.0\BlazorCRUD.Shared.dll
+E:\PROJECTS\BlazorCRUD\BlazorCRUD\Shared\bin\Debug\netstandard2.0\BlazorCRUD.Shared.pdb
+E:\PROJECTS\BlazorCRUD\BlazorCRUD\Shared\obj\Debug\netstandard2.0\BlazorCRUD.Shared.csprojAssemblyReference.cache
+E:\PROJECTS\BlazorCRUD\BlazorCRUD\Shared\obj\Debug\netstandard2.0\BlazorCRUD.Shared.AssemblyInfoInputs.cache
+E:\PROJECTS\BlazorCRUD\BlazorCRUD\Shared\obj\Debug\netstandard2.0\BlazorCRUD.Shared.AssemblyInfo.cs
+E:\PROJECTS\BlazorCRUD\BlazorCRUD\Shared\obj\Debug\netstandard2.0\BlazorCRUD.Shared.dll
+E:\PROJECTS\BlazorCRUD\BlazorCRUD\Shared\obj\Debug\netstandard2.0\BlazorCRUD.Shared.pdb
+E:\PROJECTS\BlazorCRUD\BlazorCRUD\Shared\obj\Debug\netstandard2.0\BlazorCRUD.Shared.csproj.CoreCompileInputs.cache
