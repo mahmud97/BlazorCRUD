@@ -1,0 +1,67 @@
+﻿<EditForm Model="@test" OnValidSubmit="@OnValidSubmit">
+    <DataAnnotationsValidator />
+    <div>
+        <label>Test Id</label>
+        <div>
+            <InputNumber @bind-Value="@test.TestId" />
+            <ValidationMessage For="@(() => test.TestId)" />
+        </div>
+    </div>
+
+    <div>
+        <label>Category Name</label>
+        <div>
+            <InputText @bind-Value="@test.CategoryName" />
+            <ValidationMessage For="@(() => test.CategoryName)" />
+        </div>
+    </div>
+
+
+    <div>
+        <label>Test ShortName</label>
+        <div>
+            <InputText @bind-Value="@test.TestShortName" />
+            <ValidationMessage For="@(() => test.TestShortName)" />
+        </div>
+    </div>
+
+    <div>
+        <label>Test Name</label>
+        <div>
+            <InputText @bind-Value="@test.TestName" />
+            <ValidationMessage For="@(() => test.TestName)" />
+        </div>
+    </div>
+
+    <div>
+        <label>Test Price</label>
+        <div>
+            <InputNumber @bind-Value="@test.TestPrice" />
+            <ValidationMessage For="@(() => test.TestPrice)" />
+        </div>
+    </div>
+
+    <div>
+        <label>Currently Performing</label>
+        <div>
+            <InputText @bind-Value="@test.CurrentlyPerforming" />
+            <ValidationMessage For="@(() => test.CurrentlyPerforming)" />
+        </div>
+    </div>
+
+    <br />
+
+    <button type="submit" class="btn btn-success">
+        @ButtonText
+    </button>
+
+</EditForm>
+
+
+
+@code {
+    [Parameter] public TestList test { get; set; }
+    [Parameter] public string ButtonText { get; set; } = "Save Test Info";
+    [Parameter] public EventCallback OnValidSubmit { get; set; }
+
+}

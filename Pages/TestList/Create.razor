@@ -1,0 +1,135 @@
+﻿@page "/addtest"
+@inject Controllers.TestListService tservice
+@inject NavigationManager navigate
+ 
+
+
+<h3>Create Test</h3>
+<hr />
+
+<EditForm Model="@test" OnValidSubmit="@AddTest">
+    <DataAnnotationsValidator />
+    <div>
+        <label>Test Id</label>
+        <div>
+            <InputNumber @bind-Value="@test.TestId" />
+            <ValidationMessage For="@(() => test.TestId)" />
+        </div>
+    </div>
+
+    <div>
+        <label>Category Name</label>
+        <div>
+            <InputText @bind-Value="@test.CategoryName" />
+            <ValidationMessage For="@(() => test.CategoryName)" />
+        </div>
+    </div>
+
+
+    <div>
+        <label>Test ShortName</label>
+        <div>
+            <InputText @bind-Value="@test.TestShortName" />
+            <ValidationMessage For="@(() => test.TestShortName)" />
+        </div>
+    </div>
+
+    <div>
+        <label>Test Name</label>
+        <div>
+            <InputText @bind-Value="@test.TestName" />
+            <ValidationMessage For="@(() => test.TestName)" />
+        </div>
+    </div>
+
+    <div>
+        <label>Test Price</label>
+        <div>
+            <InputNumber @bind-Value="@test.TestPrice" />
+            <ValidationMessage For="@(() => test.TestPrice)" />
+        </div>
+    </div>
+
+    <div>
+        <label>Currently Performing</label>
+        <div>
+            <InputText @bind-Value="@test.CurrentlyPerforming" />
+            <ValidationMessage For="@(() => test.CurrentlyPerforming)" />
+        </div>
+    </div>
+
+    <br />
+
+    <button type="submit" class="btn btn-success">
+        Create Test
+    </button>
+    <button type="submit" class="btn btn-primary" @onclick="@Cancel">Cancel</button>
+
+</EditForm>
+
+
+@*<form>
+   
+    <div class="row">
+        <div class="col-md-10">
+
+
+            <div class="form-group">
+                <label for="Testid" class="custom-control-label">Test Id </label>
+                <input form="Testid" class="form-control" @bind="ts.TestId">
+               
+            </div>
+
+            <div class="form-group">
+                <label for="Category Name" class="custom-control-label">Category Name </label>
+                <input form="Category Name" class="form-control" @bind="ts.CategoryName">
+            </div>
+
+            <div class="form-group">
+                <label for="Test ShortName" class="custom-control-label">Test ShortName </label>
+                <input form="Test ShortName" class="form-control" @bind="ts.TestShortName">
+            </div>
+
+            <div class="form-group">
+                <label for="Test Name" class="custom-control-label">Test Name </label>
+                <input form="Test Name" class="form-control" @bind="ts.TestName">
+            </div>
+
+            <div class="form-group">
+                <label for="Test Price" class="custom-control-label">Test Price </label>
+                <input form="Test Price" class="form-control" @bind="ts.TestPrice">
+            </div>
+
+            <div class="form-group">
+                <label for="Currently Performing" class="custom-control-label">Currently Performing </label>
+                <input form="Currently Performing" class="form-control" @bind="ts.CurrentlyPerforming">
+            </div>
+
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" @onclick="@AddTest">Submit</button>
+    <button type="submit" class="btn btn-primary" @onclick="@Cancel">Cancel</button>
+
+
+</form>*@
+
+@code {
+
+    TestList test = new TestList();
+
+    protected void AddTest()
+    {
+
+        tservice.CreateTest(test);
+        navigate.NavigateTo("testlist");
+    }
+
+    void Cancel()
+    {
+        navigate.NavigateTo("testlist");
+
+    }
+
+
+}

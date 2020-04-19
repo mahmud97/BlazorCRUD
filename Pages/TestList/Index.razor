@@ -1,0 +1,149 @@
+﻿@page "/testlist"
+@page "/"
+@inject Controllers.TestListService tservice
+@inject IJSRuntime js
+
+<h2>Test List</h2>
+<NavLink class="nav-link" href="addtest">
+    <span class="oi oi-plus" aria-hidden="true"></span>
+    Add New
+</NavLink>
+<SfGrid DataSource="@lists" AllowPaging="true"
+            AllowSorting="true"
+            AllowFiltering="true"
+            AllowGrouping="true">
+        <GridPageSettings PageSize="1"></GridPageSettings>
+        <GridColumns>
+            <GridColumn Field="@nameof(TestList.Id)"
+                        HeaderText="Id"
+                        TextAlign="TextAlign.Right"
+                        Width="120">
+            </GridColumn>
+            <GridColumn Field=@nameof(TestList.TestId)
+                        HeaderText="Test Id"
+                        TextAlign="TextAlign.Right"
+                        Width="150">
+            </GridColumn>
+            <GridColumn Field=@nameof(TestList.CategoryName)
+                        HeaderText="Category Name"
+                        TextAlign="TextAlign.Right"
+                        Width="130">
+            </GridColumn>
+            <GridColumn Field=@nameof(TestList.TestShortName)
+                        HeaderText="TestShortName"
+                        TextAlign="TextAlign.Right"
+                        Width="130">
+            </GridColumn>
+            <GridColumn Field=@nameof(TestList.TestName)
+                        HeaderText="Test Name"
+                        TextAlign="TextAlign.Right"
+                        Width="130">
+            </GridColumn>
+
+
+            <GridColumn Field=@nameof(TestList.TestPrice)
+                        HeaderText="Freight"
+                        Format="C2"
+                        TextAlign="TextAlign.Right"
+                        Width="120">
+            </GridColumn>
+
+            <GridColumn Field=@nameof(TestList.CurrentlyPerforming)
+                        HeaderText="Currently Performing"
+                        TextAlign="TextAlign.Right"
+                        Width="130">
+            </GridColumn>
+
+
+        </GridColumns>
+    </SfGrid>
+
+
+
+
+@if (lists == null)
+{
+    <p>Loading...</p>
+}
+
+else if (lists.Count == 0)
+{
+    <p>there are no data</p>
+}
+
+
+@*else
+{
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th>Id</th>
+                <th>Test Id</th>
+                <th>Category Name</th>
+                <th>Test Short Name</th>
+                <th>Test Name</th>
+                <th>Test Price</th>
+                <th>Currently Performing</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var ob in lists)
+            {
+                <tr>
+                    <td>@ob.Id</td>
+                    <td>@ob.TestId</td>
+                    <td>@ob.CategoryName</td>
+                    <td>@ob.TestShortName</td>
+                    <td>@ob.TestName</td>
+                    <td>@ob.TestPrice</td>
+                    <td>@ob.CurrentlyPerforming</td>
+                    <td>
+                        <a class="nav-link" href="edittest/@ob.Id">
+                            <span class="oi oi-pencil" aria-hidden="true"></span>Edit
+                        </a>
+
+                        <a class="nav-link" href="deletetest/@ob.Id">
+                            <span class="oi oi-trash" aria-hidden="true"></span>Delete
+                        </a>
+
+
+
+                    </td>
+
+
+                </tr>
+            }
+        </tbody>
+    </table>
+}*@
+
+@code{
+
+
+    TestList t = new TestList();
+
+    List<TestList> lists;
+    protected override async Task OnInitializedAsync()
+    {
+        lists = await Task.Run(() => tservice.GetTestLists());
+
+
+    }
+
+    //async Task DeleteTest(int testid)
+    //{
+    //    var selectedtest = lists.First(l => l.TestId == testid);
+    //    if (await js.InvokeAsync<bool>("confirm", $"Are you sure to delete patient information of  : {selectedtest.TestName}?"))
+    //    {
+
+    //        tservice.DeleteTest(t);
+    //        //await http.DeleteAsync($"api/patient/{patientId}");
+    //        //await GetPatientData();
+
+    //    }
+    //}
+
+
+}

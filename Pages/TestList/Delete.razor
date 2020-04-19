@@ -1,0 +1,83 @@
+﻿@page "/deletetest/{id:int}"
+@inject Controllers.TestListService tservice
+@inject NavigationManager navigate
+
+<h3> Are you sure to delete this ?</h3>
+<div class="col-md-8">
+
+    <div class="form-group">
+        <lable>TestId</lable>
+        <lable>@test.TestId</lable>
+    </div>
+    <div class="form-group">
+        <lable>Test Id</lable>
+        <lable>@test.CategoryName</lable>
+    </div>
+    <div class="form-group">
+        <lable>Test ShortName</lable>
+        <lable>@test.TestShortName</lable>
+    </div>
+    <div class="form-group">
+        <lable>Test Name</lable>
+        <lable>@test.TestName</lable>
+    </div>
+
+    <div class="form-group">
+        <lable>Test Price</lable>
+        <lable>@test.TestPrice</lable>
+    </div>
+
+    <div class="form-group">
+        <lable>Currently Performing</lable>
+        <lable>@test.CurrentlyPerforming</lable>
+    </div>
+
+
+
+
+
+    <button type="submit" class="btn btn-success"  @onclick="@DeleteRecord">
+        Delete
+    </button>
+    <button type="submit" class="btn btn-primary" @onclick="@Cancel">
+    Cancel
+    </button>
+
+
+
+
+
+
+</div>
+
+
+
+
+@code {
+
+    [Parameter]
+    public int id { get; set; }
+    TestList test = new TestList();
+
+    protected async override Task OnParametersSetAsync()
+    {
+        test = await Task.Run(() => tservice.GetTestById(id));
+    }
+
+
+    protected void DeleteRecord()
+    {
+
+        tservice.DeleteTest(test);
+        navigate.NavigateTo("testlist");
+    }
+
+    void Cancel()
+    {
+        navigate.NavigateTo("testlist");
+
+    }
+
+
+}
+

@@ -1,0 +1,97 @@
+﻿@page "/edittest/{id:int}"
+@inject Controllers.TestListService tservice
+@inject NavigationManager navigate
+
+<h3>Edit Test</h3>
+
+
+<EditForm Model="@test" OnValidSubmit="@EditTest">
+    <DataAnnotationsValidator />
+    <div>
+        <label>Test Id</label>
+        <div>
+            <InputNumber @bind-Value="@test.TestId" />
+            <ValidationMessage For="@(() => test.TestId)" />
+        </div>
+    </div>
+    <br />
+
+    <div>
+        <label>Category Name</label>
+        <div>
+            <InputText @bind-Value="@test.CategoryName" />
+            <ValidationMessage For="@(() => test.CategoryName)" />
+        </div>
+    </div>
+    <br />
+
+    <div>
+        <label>Test ShortName</label>
+        <div>
+            <InputText @bind-Value="@test.TestShortName" />
+            <ValidationMessage For="@(() => test.TestShortName)" />
+        </div>
+    </div>
+    <br />
+
+    <div>
+        <label>Test Name</label>
+        <div>
+            <InputText @bind-Value="@test.TestName" />
+            <ValidationMessage For="@(() => test.TestName)" />
+        </div>
+    </div>
+
+    <div>
+        <label>Test Price</label>
+        <div>
+            <InputNumber @bind-Value="@test.TestPrice" />
+            <ValidationMessage For="@(() => test.TestPrice)" />
+        </div>
+    </div>
+
+    <div>
+        <label>Currently Performing</label>
+        <div>
+            <InputText @bind-Value="@test.CurrentlyPerforming" />
+            <ValidationMessage For="@(() => test.CurrentlyPerforming)" />
+        </div>
+    </div>
+
+    <br />
+
+    <button type="submit" class="btn btn-success">
+        Update Test
+    </button>
+    <button type="submit" class="btn btn-primary" @onclick="@Cancel">Cancel</button>
+
+</EditForm>
+
+@code {
+
+    [Parameter]
+    public int id { get; set; }
+    TestList test = new TestList();
+
+    protected async override Task OnParametersSetAsync()
+    {
+        test = await Task.Run(()=>tservice.GetTestById(id));
+    }
+
+
+    protected void EditTest()
+    {
+
+        tservice.UpdateTest(test);
+        navigate.NavigateTo("testlist");
+    }
+
+    void Cancel()
+    {
+        navigate.NavigateTo("testlist");
+
+    }
+
+
+}
+
