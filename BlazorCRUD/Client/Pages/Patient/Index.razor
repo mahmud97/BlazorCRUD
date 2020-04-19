@@ -3,11 +3,15 @@
 @inject HttpClient http
 @inject IJSRuntime js
 
+
+
+
 <h2>Patient</h2>
 
 <div>
     <a class="btn btn-success" href="/patient/create">Create New Patient</a>
 </div>
+<br />
 
 
 @if (patient == null)
@@ -26,7 +30,8 @@ else
     <table class="table">
         <thead>
             <tr>
-                <th></th>
+                <th>Edit</th>
+                <th>Delete</th>
                 <th>Id</th>
                 <th>SerialNo</th>
                 <th>Name</th>
@@ -39,6 +44,8 @@ else
                     <td>
 
                         <a class="btn btn-success" href="patient/edit/@p.Id">Edit</a>
+                        </td>
+                    <td>
                         <button class="btn btn-danger" @onclick="@(() => DeletePatient(@p.Id))">Delete</button>
 
                     </td>

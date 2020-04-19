@@ -137,6 +137,17 @@ E:\PROJECTS\BlazorCRUD\BlazorCRUD\Server\bin\Debug\netcoreapp3.1\ru\Microsoft.Co
 E:\PROJECTS\BlazorCRUD\BlazorCRUD\Server\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 E:\PROJECTS\BlazorCRUD\BlazorCRUD\Server\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 E:\PROJECTS\BlazorCRUD\BlazorCRUD\Server\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\PROJECTS\BlazorCRUD\BlazorCRUD\Server\bin\Debug\netcoreapp3.1\BlazorCRUD.Client.StaticWebAssets.xml
+E:\PROJECTS\BlazorCRUD\BlazorCRUD\Server\bin\Debug\netcoreapp3.1\BlazorCRUD.Server.StaticWebAssets.xml
+E:\PROJECTS\BlazorCRUD\BlazorCRUD\Server\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authorization.dll
+E:\PROJECTS\BlazorCRUD\BlazorCRUD\Server\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Components.dll
+E:\PROJECTS\BlazorCRUD\BlazorCRUD\Server\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Components.Forms.dll
+E:\PROJECTS\BlazorCRUD\BlazorCRUD\Server\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Components.Web.dll
+E:\PROJECTS\BlazorCRUD\BlazorCRUD\Server\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Metadata.dll
+E:\PROJECTS\BlazorCRUD\BlazorCRUD\Server\bin\Debug\netcoreapp3.1\Microsoft.JSInterop.dll
+E:\PROJECTS\BlazorCRUD\BlazorCRUD\Server\bin\Debug\netcoreapp3.1\Syncfusion.Blazor.dll
+E:\PROJECTS\BlazorCRUD\BlazorCRUD\Server\bin\Debug\netcoreapp3.1\Syncfusion.Licensing.dll
+E:\PROJECTS\BlazorCRUD\BlazorCRUD\Server\bin\Debug\netcoreapp3.1\en-US\Syncfusion.Blazor.resources.dll
 E:\PROJECTS\BlazorCRUD\BlazorCRUD\Server\obj\Debug\netcoreapp3.1\BlazorCRUD.Server.csproj.CoreCompileInputs.cache
 E:\PROJECTS\BlazorCRUD\BlazorCRUD\Server\obj\Debug\netcoreapp3.1\BlazorCRUD.Server.MvcApplicationPartsAssemblyInfo.cs
 E:\PROJECTS\BlazorCRUD\BlazorCRUD\Server\obj\Debug\netcoreapp3.1\BlazorCRUD.Server.MvcApplicationPartsAssemblyInfo.cache

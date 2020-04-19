@@ -39,7 +39,7 @@ namespace BlazorCRUD.Server.Controllers
         [HttpPost]
         public async Task<ActionResult> Post(Patient patient)
         {
-            context.Add(patient);
+            context.Patients.Add(patient);
             await context.SaveChangesAsync();
             return new CreatedAtRouteResult("GetPatient", new { id = patient.Id }, patient);
         }

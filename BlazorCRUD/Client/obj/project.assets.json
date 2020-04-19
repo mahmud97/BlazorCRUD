@@ -241,6 +241,15 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
+      "Syncfusion.Blazor/18.1.0.44": {
+        "type": "package",
+        "build": {
+          "buildTransitive/Syncfusion.Blazor.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Syncfusion.Blazor.props": {}
+        }
+      },
       "System.Buffers/4.5.0": {
         "type": "package",
         "compile": {
@@ -337,6 +346,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Syncfusion.Blazor": "18.1.0.44",
           "System.ComponentModel.Annotations": "4.7.0"
         },
         "compile": {
@@ -1171,6 +1181,71 @@
         "netstandard.library.nuspec"
       ]
     },
+    "Syncfusion.Blazor/18.1.0.44": {
+      "sha512": "McmvUaaRI+h/TUzNlLsvIzJu5IXX2+5CgwEdNusLxeUd8Rf21mx1S6Ycyluqkz/UA6ekzigXFGUNtEPzy/mG6w==",
+      "type": "package",
+      "path": "syncfusion.blazor/18.1.0.44",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "build/Syncfusion.Blazor.props",
+        "buildMultiTargeting/Syncfusion.Blazor.props",
+        "buildTransitive/Syncfusion.Blazor.props",
+        "content/Nuget.Config",
+        "contentFiles/any/netstandard2.1/Nuget.Config",
+        "lib/netstandard2.1/Syncfusion.Blazor.dll",
+        "lib/netstandard2.1/Syncfusion.Blazor.xml",
+        "lib/netstandard2.1/en-US/Syncfusion.Blazor.resources.dll",
+        "staticwebassets/scripts/barcodegenerator-9388dc.min.js",
+        "staticwebassets/scripts/buttons-9388dc.min.js",
+        "staticwebassets/scripts/calendars-9388dc.min.js",
+        "staticwebassets/scripts/charts-9388dc.min.js",
+        "staticwebassets/scripts/circulargauge-9388dc.min.js",
+        "staticwebassets/scripts/compression-9388dc.min.js",
+        "staticwebassets/scripts/data-9388dc.min.js",
+        "staticwebassets/scripts/diagrams-9388dc.min.js",
+        "staticwebassets/scripts/documenteditor-9388dc.min.js",
+        "staticwebassets/scripts/drawings-9388dc.min.js",
+        "staticwebassets/scripts/dropdowns-9388dc.min.js",
+        "staticwebassets/scripts/excelexport-9388dc.min.js",
+        "staticwebassets/scripts/filemanager-9388dc.min.js",
+        "staticwebassets/scripts/fileutils-9388dc.min.js",
+        "staticwebassets/scripts/gantt-9388dc.min.js",
+        "staticwebassets/scripts/grids-9388dc.min.js",
+        "staticwebassets/scripts/heatmap-9388dc.min.js",
+        "staticwebassets/scripts/inplaceeditor-9388dc.min.js",
+        "staticwebassets/scripts/inputs-9388dc.min.js",
+        "staticwebassets/scripts/kanban-9388dc.min.js",
+        "staticwebassets/scripts/layouts-9388dc.min.js",
+        "staticwebassets/scripts/lineargauge-9388dc.min.js",
+        "staticwebassets/scripts/lists-9388dc.min.js",
+        "staticwebassets/scripts/maps-9388dc.min.js",
+        "staticwebassets/scripts/navigations-9388dc.min.js",
+        "staticwebassets/scripts/notifications-9388dc.min.js",
+        "staticwebassets/scripts/officechart-9388dc.min.js",
+        "staticwebassets/scripts/pdfexport-9388dc.min.js",
+        "staticwebassets/scripts/pdfviewer-9388dc.min.js",
+        "staticwebassets/scripts/pivotview-9388dc.min.js",
+        "staticwebassets/scripts/popups-9388dc.min.js",
+        "staticwebassets/scripts/progressbar-9388dc.min.js",
+        "staticwebassets/scripts/querybuilder-9388dc.min.js",
+        "staticwebassets/scripts/richtexteditor-9388dc.min.js",
+        "staticwebassets/scripts/schedule-9388dc.min.js",
+        "staticwebassets/scripts/splitbuttons-9388dc.min.js",
+        "staticwebassets/scripts/svgbase-9388dc.min.js",
+        "staticwebassets/scripts/syncfusion-blazor.min.js",
+        "staticwebassets/scripts/treegrid-9388dc.min.js",
+        "staticwebassets/scripts/treemap-9388dc.min.js",
+        "staticwebassets/styles/bootstrap.css",
+        "staticwebassets/styles/bootstrap4.css",
+        "staticwebassets/styles/fabric.css",
+        "staticwebassets/styles/highcontrast.css",
+        "staticwebassets/styles/material.css",
+        "syncfusion.blazor.18.1.0.44.nupkg.sha512",
+        "syncfusion.blazor.nuspec"
+      ]
+    },
     "System.Buffers/4.5.0": {
       "sha512": "pL2ChpaRRWI/p4LXyy4RgeWlYF2sgfj/pnVMvBqwNFr5cXg7CXNnWZWxrOONLg8VGdFB8oB+EG2Qw4MLgTOe+A==",
       "type": "package",
@@ -1472,7 +1547,8 @@
       "Microsoft.AspNetCore.Blazor.Build >= 3.1.0-preview2.19528.8",
       "Microsoft.AspNetCore.Blazor.DevServer >= 3.1.0-preview2.19528.8",
       "Microsoft.AspNetCore.Blazor.HttpClient >= 3.1.0-preview2.19528.8",
-      "NETStandard.Library >= 2.0.3"
+      "NETStandard.Library >= 2.0.3",
+      "Syncfusion.Blazor >= 18.1.0.44"
     ]
   },
   "packageFolders": {
@@ -1543,6 +1619,10 @@
             "target": "Package",
             "version": "[2.0.3, )",
             "autoReferenced": true
+          },
+          "Syncfusion.Blazor": {
+            "target": "Package",
+            "version": "[18.1.0.44, )"
           }
         },
         "imports": [

@@ -10,6 +10,7 @@
       "BlazorCRUD.Shared/1.0.0": {
         "dependencies": {
           "NETStandard.Library": "2.0.3",
+          "Syncfusion.Blazor": "18.1.0.44",
           "System.ComponentModel.Annotations": "4.7.0"
         },
         "runtime": {
@@ -22,6 +23,7 @@
           "Microsoft.NETCore.Platforms": "1.1.0"
         }
       },
+      "Syncfusion.Blazor/18.1.0.44": {},
       "System.ComponentModel.Annotations/4.7.0": {
         "runtime": {
           "lib/netstandard2.0/System.ComponentModel.Annotations.dll": {
@@ -51,6 +53,13 @@
       "sha512": "sha512-st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
       "path": "netstandard.library/2.0.3",
       "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
+    },
+    "Syncfusion.Blazor/18.1.0.44": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-McmvUaaRI+h/TUzNlLsvIzJu5IXX2+5CgwEdNusLxeUd8Rf21mx1S6Ycyluqkz/UA6ekzigXFGUNtEPzy/mG6w==",
+      "path": "syncfusion.blazor/18.1.0.44",
+      "hashPath": "syncfusion.blazor.18.1.0.44.nupkg.sha512"
     },
     "System.ComponentModel.Annotations/4.7.0": {
       "type": "package",

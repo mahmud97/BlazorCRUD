@@ -7,6 +7,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Linq;
+using Syncfusion.Blazor;
+
 
 namespace BlazorCRUD.Server
 {
@@ -30,6 +32,7 @@ namespace BlazorCRUD.Server
 
             services.AddDbContext<MainDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
             services.AddMvc();
+            //services.AddSyncfusionBlazor();
             services.AddResponseCompression(opts =>
             {
                 opts.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(
@@ -40,6 +43,7 @@ namespace BlazorCRUD.Server
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            //Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Add your valid license");
             app.UseResponseCompression();
 
             if (env.IsDevelopment())
